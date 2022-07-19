@@ -1,24 +1,30 @@
+#Simula un cajero automático con pedido de clave y bloqueo
+
+
 clave= "hola"
 dineroEnCuenta= 6000
 
 print ("Bienvenido")
 contraseña=input ("Ingrese su contraseña ")
 
+#Si la contraseña no es correcta
+
 if (contraseña!=clave):
     suma=0
     print ("\nContraseña incorrecta")
-    while(suma<3):
+    while(suma<3):                                               #Si se ingresa 3 veces mal la contaseña se bloquea la cuenta
         contraseña=input ("Ingrese nuevamente su contraseña ")
         suma=suma+1
         print ("\nContraseña incorrecta")
-    print ("\nCuenta bloqueada")
+    print ("\nCuenta bloqueada","\nGracias por usas nuestros servicios")
 
 else:
 
     dinero=int(input("Ingresar la cantidad de dinero que desea retirar "))
-    if (dineroEnCuenta<dinero):
-         print ("Saldo insuficiente")
-    else:
+
+    if (dineroEnCuenta<dinero):                     #Si el dinero que se desea retirar es mayor al que hay en la cuenta
+         print ("Saldo insuficiente","\nGracias por usas nuestros servicios")
+    else:                                           #Si el saldo que se desea retirar es inferior al que hay en la cuenta
         mil=dinero//1000
         resto_mil=dinero%1000
         quin=resto_mil//500
@@ -42,6 +48,6 @@ else:
          print (cincu,"Billetes de $50")
         if (resto_cincu!=0):
          print ("$",resto_cincu,"quedan en la cuenta")
-
+    print ("\nGracias por usas nuestros servicios")
 
 
